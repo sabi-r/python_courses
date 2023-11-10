@@ -41,14 +41,16 @@
 # якщо після конкатенації отримали 10 то перемноживши на 3 отримаємо 30.
 #
 #
-# num_1 = input("Введіть ваше щасливе число №1?")
-# num_2 = input("Введіть ваше щасливе число №2?")
+# num_1 = input("Вкажіть число №1")
+# num_2 = input("Вкажіть число №2")
+# num_type = input("Вкажіть який у вас тип даних?")
 #
-# print(type(num_1), num_1)
-# print(type(num_2), num_2)
-#
-# print(3 * (int(num_1) + int(num_2)))
-# print(3 * int(num_1 + num_2))
+# if num_type == "str":
+#     print(3 * int(num_1 + num_2))
+# elif num_type == "int":
+#     print(3 * (int(num_1) + int(num_2)))
+# else:
+#     print("Це якийсь невідомий тип даних :)")
 
 
 
