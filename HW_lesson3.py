@@ -24,22 +24,7 @@
 # Виводмо список і прощаємось
 
 
-list_products = []
-
-product = input("Введіть продукт №1:")
-list_products.append(product)
-
-product = input("Введіть продукт №2:")
-list_products.append(product)
-
-product = input("Введіть продукт №3:")
-list_products.append(product)
-
-product = input("Введіть продукт №4:")
-list_products.append(product)
-
-product = input("Введіть продукт №5:")
-list_products.append(product)
+list_products = input("Введіть ваші продукти через пробіл").split()
 
 print(f"Ось ваш список продуктів: {list_products}")
 
@@ -69,23 +54,9 @@ if del_product > 0 and del_product <= len(list_products):
     print(f"Ось ваш оновлений список продуктів: {list_products}")
 
 if len(list_products) == 0:
-    product = input("Давайте додамо ще продуктів. Додайте продукти")
-    list_products.append(product)
-
-if len(list_products) < 5:
-    product = input("Давайте додамо ще продуктів. Додайте продукт")
-    list_products.append(product)
-
-if len(list_products) < 5:
-    product = input("Давайте додамо ще продуктів. Додайте продукт")
-    list_products.append(product)
-
-if len(list_products) < 5:
-    product = input("Давайте додамо ще продуктів. Додайте продукт")
-    list_products.append(product)
-
-if len(list_products) < 5:
-    product = input("Давайте додамо ще продуктів. Додайте продукт")
-    list_products.append(product)
-
-print(f"Ось ваш фінальний список продуктів {list_products}")
+    list_products = input("Давайте додамо ще продуктів. Додайте продукти").split()
+    print(f"Ось ваш фінальний список продуктів {list_products}")
+elif len(list_products) > 0:
+    print(f"Ви ще не все купили, ось список продуктів : {list_products}")
+else:
+    print("Такого бути не може")
