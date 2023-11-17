@@ -52,28 +52,32 @@
 # else:
 #     print("Такого бути не може")
 #
-
+_______________________________________________________________________________________________________
 # Задача  3
 #
 # Напишіть програму Банкомат.
 # Втсановіть пін код для користувача(зробимо це константою).
 
-# Запитайте в користувача Пін якщо він введе три рази не вірно то напишіть що карта заблокована.
-# Використовуйте цикл while.
+# # Запитайте в користувача Пін якщо він введе три рази не вірно то напишіть що карта заблокована.
+# # Використовуйте цикл while.
+#
+# PIN_CODE = 1122
+# user_attempt = 0
+# max_attempt = 3
+#
+# while user_attempt < max_attempt:
+#     input_pin = int(input("Введіть PIN, у вас 3 спроби: "))
+#     if input_pin == PIN_CODE:
+#         print("Ви увійшли у систему")
+#         break
+#     if input_pin != PIN_CODE:
+#         print("Ви ввели невірний PIN")
+#         user_attempt += 1
+#
+# if user_attempt >= max_attempt:
+#     print("Ваша карта заблокована")
 
-PIN_CODE = 1122
-input_pin = int(input("Введіть PIN, у вас 3 спроби: "))
-while input_pin == PIN_CODE:
-    input_pin(PIN_CODE - 1)
-    print("Ви увійшли у систему")
-if input_pin > 3:
-    input_pin.pop(PIN_CODE - 1)
-    print("Карта заблокована")
-if input_pin == 0:
-    input_pin = input("Ви не ввели PIN, спробуйте ще раз: ")
-    print(f"Ось ваш фінальний список продуктів ")
-
-
+_________________________________________________________________________________________________
 
 # Задача 4
 #
@@ -89,4 +93,16 @@ if input_pin == 0:
 #
 # print(f_string)
 #
+# print(format_string)
+
+# name = 'оЛенА'
+# age = 21
+#
+# # # f_string = f'Я {name.title()}, мені {age} рік'
+# # # print(f_string)
+# #
+# # format_string = 'Я {0}, мені {1} рік'.format(name.title(), age)
+# # print(format_string)
+#
+# format_string = 'Я {name}, мені {age} рік'.format(name=name.title(), age=age)
 # print(format_string)
