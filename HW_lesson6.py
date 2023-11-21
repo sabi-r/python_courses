@@ -9,14 +9,6 @@
 # програма приймає від користувача його зарплату за 3 місяці та відсоток який він має сплатити.
 # Виведіть на екран скільки треба податків сплатити. Не забудьте ЄСВ(4422)
 
-# salary = float(input("Введіть зарплату:"))
-# single_tax = float(input("Введіть процент податку:"))
-# euv = 4422
-#
-# tax_to_pay = (salary * (single_tax / 100)) + euv
-# print(tax_to_pay)
-
-
 def calculate_tax(salary, single_tax):
     tax_to_pay = (salary * (single_tax / 100)) + 4422
     return tax_to_pay
