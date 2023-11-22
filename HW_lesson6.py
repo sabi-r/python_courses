@@ -6,10 +6,10 @@
 
 # 14 Податки
 # Прийшов час податків і вам треба написати програму що б допомогти відділу бугалтерії
-# програма приймає від користувача його зарплату за 3 місяці та відсоток який він має сплатити.
+#  програма приймає від користувача його зарплату за 3 місяці та відсоток який він має сплатити.
 # Виведіть на екран скільки треба податків сплатити. Не забудьте ЄСВ(4422)
 
-# def calculate_tax(salary, single_tax):
+# def calculate_tax(salary: int | float, single_tax: int | float):
 #     tax_to_pay = (salary * (single_tax / 100)) + 4422
 #     return tax_to_pay
 #
@@ -40,28 +40,36 @@
 # і виведіть їх на екран.
 # Але цього разу вже без видалень.
 #
-# def add_product():
-#     list = input("Введіть список продуктів через пробіл").split()
-#     print(f"Ось ваш список продуктів: {list}")
-#     return list
+# def add_product(internal_input: str):
+#     internal_list = internal_input.split()
+#     print(f"Ось ваш список продуктів: {internal_list}")
+#     return internal_list
 #
 #
-# def delete_product(list):
-#     index = int(input("Який продукт ви вже купили?"))
-#     if 0 < index <= len(list):
-#         list.pop(index - 1)
-#         print(f"Ось ваш оновлений список продуктів: {list}")
-#         return list
+# def delete_product(internal_index: int, internal_list: list):
+#     if 0 < internal_index <= len(internal_list):
+#         internal_list.pop(internal_index - 1)
+#         print(f"Ось ваш оновлений список продуктів: {internal_list}")
+#         return internal_list
 #
 #
-# user_list = add_product()
+# def manage_products(user_list: str):
+#     user_list = add_product(internal_input=user_list)
 #
-# while len(user_list) > 0:
-#     delete_product(list=user_list)
+#     while len(user_list) > 0:
+#         user_index = int(input("Який продукт ви вже купили?"))
+#         delete_product(internal_index=user_index, internal_list=user_list)
 #
-# if len(user_list) == 0:
-#     user_list = add_product()
-# else:
-#     if len(user_list) > 0:
-#         print(f"Ви ще не все купили. Ось що вам залишилось: {user_list}")
-#         delete_product(list=user_list)
+#     if len(user_list) == 0:
+#         user_input = input("Введіть список продуктів через пробіл")
+#         user_list = add_product(internal_input=user_input)
+#     else:
+#         if len(user_list) > 0:
+#             user_index = int(input("Який продукт ви вже купили?"))
+#             delete_product(internal_index=user_index, internal_list=user_list)
+#
+#
+# user_input = input("Введіть список продуктів через пробіл")
+# manage_products(user_list=user_input)
+
+
