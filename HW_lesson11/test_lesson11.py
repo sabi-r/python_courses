@@ -31,5 +31,5 @@ def test_unique_name_5():
     print("я йду спати на 2 секунди")
     time.sleep(2)
 
-# pytest test_lesson_11.py -v -n=5
+# pytest test_lesson11.py -v -n=5
 # pytest -k "unique" test_lesson_11.py -v
