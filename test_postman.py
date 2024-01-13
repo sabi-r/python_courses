@@ -20,3 +20,22 @@
 #     response = requests.request("POST", url, json=payload)
 #     assert response.status_code == 200
 
+import requests
+
+def test_authentication():
+    auth_url = "https://uat.4ratech.com/api/v1/app/auth/login"
+    auth_data = {
+        "username": "rahimova_sabi",
+        "password": "R0McaWZ3Ybfb1xiy",
+        "device_name": "postman"
+    }
+    headers = {
+        "Accept": "application/json"
+    }
+
+    response = requests.post(auth_url, json=auth_data, headers=headers)
+
+    assert response.status_code == 200, f"Authentication failed. Status code: {response.status_code}"
+
+if __name__ == "__main__":
+    test_authentication()
