@@ -17,7 +17,7 @@ class TestElementsPage:
     #  todo перевірити відповіді всіх 33 елементів в елементс
     #  assert elements[2] == "Radio Button"
 
-    elements = [
+    @pytest.mark.parametrize("expected_elements", [
         'Text Box',
         'Check Box',
         'Radio Button',
@@ -27,16 +27,16 @@ class TestElementsPage:
         'Broken Links - Images',
         'Upload and Download',
         'Dynamic Properties',
-        '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',  # Порожні поля
-    ]
-
-    # Параметризація тесту
-    @pytest.mark.parametrize("elements", elements)
-    def test_element_verification(self, chrome, elements):
+        '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+    ])
+    def test_element_verification(self, chrome, expected_elements):
         page = ElementsPage(chrome)
         page.open()
-        elements = page.get_elements_page_categories()
-        assert elements == elements
+        actual_elements = page.get_elements_page_categories()
+        for i,j in zip(actual_elements, expected_elements):
+            assert i == j
+
+
 
     # def test_is_button_enabled(self, chrome):
     #     page = PageDynamicProperties(chrome)
