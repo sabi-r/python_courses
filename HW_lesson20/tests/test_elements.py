@@ -1,7 +1,7 @@
 from selenium.webdriver.remote.webelement import WebElement
 
-from Hillel_october_23.lesson_20.DynamicPropertiesPage import PageDynamicProperties
-from Hillel_october_23.lesson_20.ElementsPage import ElementsPage
+from HW_lesson20.DynamicPropertiesPage import PageDynamicProperties
+from HW_lesson20.ElementsPage import ElementsPage
 import pytest
 
 
@@ -26,3 +26,4 @@ class TestElementsPage:
     #     page = PageDynamicProperties(chrome).open()  # короткий запис
     #     button: WebElement = page.button_invisible_visible()
     #     button.click()
+    

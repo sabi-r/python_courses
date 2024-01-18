@@ -22,9 +22,9 @@ class TestWaiters:
         visible_invisible_button.click()
         #todo завершити тест на те що кнопка є ._is...
 
-    def test_connection_enable(self):
-        #todo завершити тест на те що кнопка є ._is...
-        pass
+    # def test_connection_enable(self):
+    #     #todo завершити тест на те що кнопка є ._is...
+    #     pass
 
     def test_connection_color(self):
         self.driver.get("https://demoqa.com/dynamic-properties")
