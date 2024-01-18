@@ -33,10 +33,7 @@ class TestElementsPage:
         page = ElementsPage(chrome)
         page.open()
         actual_elements = page.get_elements_page_categories()
-        for i,j in zip(actual_elements, expected_elements):
-            assert i == j
-
-
+        assert expected_elements in actual_elements
 
     # def test_is_button_enabled(self, chrome):
     #     page = PageDynamicProperties(chrome)
