@@ -3,7 +3,7 @@ from selenium import webdriver
 
 @pytest.fixture
 def chrome():
-    driver = webdriver.Chrome(executable_path="/Users/sabina/Desktop/Python/HW_lesson20/chrome_driver")
+    driver = webdriver.Chrome(executable_path="/Users/sabina/Desktop/Python/HW_lesson20/chromedriver")
     yield driver
     driver.quit()
 
@@ -17,7 +17,7 @@ def firefox(request):
 
 @pytest.fixture(scope="class")
 def chrome_class(request):
-    driver = webdriver.Chrome(executable_path="/Users/sabina/Desktop/Python/HW_lesson20/chrome_driver")
+    driver = webdriver.Chrome(executable_path="/Users/sabina/Desktop/Python/HW_lesson20/chromedriver")
     request.cls.driver = driver
     yield driver
     driver.quit()
