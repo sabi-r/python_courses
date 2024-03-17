@@ -1,7 +1,7 @@
 import pytest
 import requests
 from selenium import webdriver
-# from webdriver_manager.firefox import GeckoDriverManager
+from webdriver.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.service import Service
 
 @pytest.fixture
