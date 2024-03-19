@@ -4,6 +4,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 URL = "https://demoqa.com/checkbox"
 
+
 class CheckboxPage:
     def __init__(self, driver):
         self.driver: WebDriver = driver
@@ -13,7 +14,8 @@ class CheckboxPage:
         return self
 
     def expand_folder(self, name) -> None:
-        versatile_checkbox_button = self.driver.find_element(By.XPATH, f"//label[contains(@for, 'tree-node-{name}')]//ancestor::span/button")
+        versatile_checkbox_button = self.driver.find_element(By.XPATH,
+                                                             f"//label[contains(@for, 'tree-node-{name}')]//ancestor::span/button")
         try:
             expand = versatile_checkbox_button.find_element(By.XPATH, "//*[contains(@class, 'expand-open')]")
             if expand.is_displayed():
@@ -33,24 +35,32 @@ class CheckboxPage:
             pass
         versatile_checkbox_button.click()
 
-
     def mark_folder(self, name):
         versatile_checkbox_button = self.driver.find_element(By.XPATH, f"//label[contains(@for, 'tree-node-{name}')]")
         input_field = self.driver.find_element(By.XPATH, f"//label[contains(@for, 'tree-node-{name}')]/input")
         if not input_field.is_selected():
             versatile_checkbox_button.click()
 
-
     def unmark_folder(self, name):
-        versatile_checkbox_button = self.driver.find_element(By.XPATH, f"//label[contains(@for, 'tree-node-{name}')]")
-        # input_field = self.driver.find_element(By.XPATH, f"//label[contains(@for, 'tree-node-{name}')]/input")
+        versatile_checkbox_button = self.driver.find_element(By.XPATH,
+                                                             f"//label[contains(@for, 'tree-node-{name}')]/span[contains(@class, 'checkbox')]")
+        try:
+            input_field = self.driver.find_element(By.XPATH, "//*[contains(@class, 'uncheck')]")
+            if not input_field.is_displayed():
+                input_field.click()
+        except NoSuchElementException:
+            pass
         versatile_checkbox_button.click()
 
+    def get_text_results(self):
+        list_message = []
+        messages = [message.text for message in
+                    self.driver.find_elements(By.XPATH, "//span[@class='text-success']")]
+        list_message.extend(messages)
+        return list_message
 
+    def scroll_down(self) -> None:
+        self.driver.execute_script("window.scrollBy(0, 200);")
 
-
-
-
-
-        # //*[contains(@class, "expand-open")] - відкрито
-        # //*[@class="rct-icon rct-icon-expand-close"]
+    # //*[contains(@class, "expand-open")] - відкрито
+    # //*[@class="rct-icon rct-icon-expand-close"]
